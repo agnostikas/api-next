@@ -31,6 +31,8 @@ This is the 5th generation user management/ CMS system for rapid project develop
 * Push, SMS, Email notifications
 * Admin
 * Automatic database backups
+* Contact us service
+* Upload service
 * ...
 
 ## Infrastructure

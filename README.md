@@ -10,7 +10,7 @@ This is the 5th generation user management/ CMS system for rapid project develop
 
 ## What's new
 
-* Every feature is now on separate Lambda and using DynamoDB as a database, because dealing with JSON on S3 was cumbersome with complex data structures.
+* Every feature is now on separate Lambda and using DynamoDB as a database, because dealing with JSON on S3 was more cumbersome with complex data structures.
 * Codebase is greatly reduced.
 * Paswordless sign in, sign up, this allowed to remove password reset endpoint.
 * Account confirmation step is now just sign up.
@@ -19,7 +19,7 @@ This is the 5th generation user management/ CMS system for rapid project develop
 * Licence changed to MIT, but repo won't be public
 * Some features were removed, but they were never fully finished on the first place, so this project is now just about user management, nothing more
 * Protocol buffers were removed, because they didn't provide much of an advantage over JSON for REST-style API without Lambda support.
-* Currently on 12 Lambdas and growing
+* Currently on over 30 Lambdas and growing
 
 ## Features
 
@@ -27,30 +27,31 @@ This is the 5th generation user management/ CMS system for rapid project develop
 * Passwordless sign up/ sign in
 * Dependency minimization
 * Token auto expiration
-* No fake email registrations
+* Email checking before sign up/ sign in with teh DNS records
 * Push, SMS, Email notifications
-* Admin
+* Admin system
 * Automatic database backups
 * Contact us service
 * Upload service
-* ...
+* A/B testing service
+* Billing service
+* Newsletter service
+* Referral service
+* Encrypted database entries (AWS KMS + AWS Secrets Manager), upon request
+* Encrypted JWT secret and admin passwords (AWS Secrets Manager), upon request
 
 ## Infrastructure
 
 * [AWS Lambda](https://aws.amazon.com/lambda/)
 * [AWS DynamoDB](https://aws.amazon.com/dynamodb/)
-* [AWS Cognito](https://aws.amazon.com/cognito/)
 * [AWS S3](https://aws.amazon.com/s3/)
 * [AWS SES](https://aws.amazon.com/ses/)
 * [AWS SNS](https://aws.amazon.com/sns/)
-* [AWS SQS](https://aws.amazon.com/sqs/)
 * [AWS API Gateway](https://aws.amazon.com/api-gateway/)
-
-All emails and notifications are processed with SNS, SQS, Lambda and SES.
 
 ## API Clients
 
-All requests should have following headers inside encoded body*:
+All requests should have the following auth headers:
 
 * x-api-key
 
@@ -66,12 +67,8 @@ npm i
 ```bash
 # Edit .env.production and config.js
 
-# Then:
+# Then, long running deployment process:
 npm run deploy
-
-# Finally:
-pip install awscli --force-reinstall --upgrade
-npm run init:ttl
 ```
 
 ## Previous versions
@@ -92,11 +89,9 @@ npm run init:ttl
 3. Add your own functions if needed
 4. Deploy: `npm run deploy`
 
-Easy, isn't? And no mess with the servers.
-
 ## How to get it
 
-Please contact me via [form](https://talaikis.com)
+Please contact me via [form here](https://talaikis.com)
 
 ## Licence
 

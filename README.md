@@ -16,7 +16,6 @@ This is the 5th generation user management/ CMS system for rapid project develop
 * Account confirmation step is now just sign up.
 * All emails are now on templates and managed via AWS SES
 * Separate Lambdas now allow much easier expansion of required features independently of each other
-* Licence changed to MIT, but repo won't be public
 * Some features were removed, but they were never fully finished on the first place, so this project is now just about user management, nothing more
 * Protocol buffers were removed, because they didn't provide much of an advantage over JSON for REST-style API without Lambda support.
 * Currently on over 30 Lambdas and growing
@@ -95,4 +94,4 @@ Please contact me via [form here](https://talaikis.com)
 
 ## Licence
 
-MIT
+See LICENCE.txt
